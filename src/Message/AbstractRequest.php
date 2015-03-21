@@ -148,10 +148,10 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['GatewayPassword'] = $this->getPassword();
         $data['PaymentType'] = $this->paymentType;
 
-        if(isset($this->transactionType)){
+        if (isset($this->transactionType)) {
             $data['TransactionType'] = $this->transactionType;
         }
-        if(isset($this->safeAction)){
+        if (isset($this->safeAction)) {
             $data['SAFE_Action'] = $this->safeAction;
         }
         return $data;
@@ -171,7 +171,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $data['LastName'] = $card->getBillingLastName();
             $data['Company'] = $card->getBillingCompany();
             $data['Address1'] = $card->getBillingAddress1();
-            if ($card->getBillingAddress2()){
+            if ($card->getBillingAddress2()) {
                 $data['Address2'] = $card->getBillingAddress2();
             }
             
@@ -199,30 +199,30 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             if ($card->getShippingFirstName()) {
                 $data['ShippingFirstName'] = $card->getShippingFirstName();
             }
-            if ($card->getShippingLastName()) {  
+            if ($card->getShippingLastName()) {
                 $data['ShippingLastName'] = $card->getShippingLastName();
             }
-            if ($card->getShippingCompany()) {  
+            if ($card->getShippingCompany()) {
                 $data['ShippingCompany'] = $card->getShippingCompany();
             }
-            if ($card->getShippingAddress1()) {  
+            if ($card->getShippingAddress1()) {
                 $data['ShippingAddress1'] = $card->getShippingAddress1();
             }
-            if ($card->getShippingAddress2()) {  
+            if ($card->getShippingAddress2()) {
                 $data['ShippingAddress2'] = $card->getShippingAddress2();
             }
-            if ($card->getShippingCity()) {  
+            if ($card->getShippingCity()) {
                 $data['ShippingCity'] = $card->getShippingCity();
             }
-            if ($card->getShippingState()) {  
+            if ($card->getShippingState()) {
                 $data['ShippingState'] = $card->getShippingState();
             }
-            if ($card->getShippingPostcode()) {  
+            if ($card->getShippingPostcode()) {
                 $data['ShippingZip'] = $card->getShippingPostcode();
             }
-            if ($card->getShippingCountry()) {  
+            if ($card->getShippingCountry()) {
                 $data['ShippingCountry'] = $card->getShippingCountry();
-            } 
+            }
         }
         return $data;
     }
@@ -236,8 +236,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         $data = array();
         $data['Amount'] = $this->getAmount();
-        if ( $this->getDescription() )
+        if ($this->getDescription()) {
             $data['OrderDescription'] = $this->getDescription();
+        }
         return $data;
     }
 
@@ -249,8 +250,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     protected function getAuthData()
     {
         $data = array();
-        if ( $this->getTransactionId() )
+        if ($this->getTransactionId()) {
             $data['TransactionID'] = $this->getTransactionId();
+        }
         return $data;
     }
 
@@ -277,9 +279,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      *
      * @return xml string
      */
-    protected function buildRequest($data){
+    protected function buildRequest($data)
+    {
         $xmlHeader = '<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
     <ProcessTransaction xmlns="https://gateway.agms.com/roxapi/">
       <objparameters>';
@@ -296,12 +301,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * Build xml for the gateway
-     *
      * @return xml string
      */
-    protected function buildTokenRequest($data, $op){
+    protected function buildTokenRequest($data, $op)
+    {
         $xmlHeader = '<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
     <' . $op . ' xmlns="https://gateway.agms.com/roxapi/">
       <vParameter>';
