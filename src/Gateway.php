@@ -257,5 +257,4 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\Agms\Message\DeleteCardRequest', $parameters);
     }
-    
 }

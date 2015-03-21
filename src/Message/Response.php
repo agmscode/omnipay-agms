@@ -90,9 +90,9 @@ class Response extends AbstractResponse
      */
     private function object2array($data)
     {
-        if (is_array($data) || is_object($data)){
+        if (is_array($data) || is_object($data)) {
             $result = array();
-            foreach ($data as $key => $value){
+            foreach ($data as $key => $value) {
                 $result[$key] = $this->object2array($value);
             }
             return $result;
