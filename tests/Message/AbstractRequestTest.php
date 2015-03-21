@@ -5,7 +5,7 @@ namespace Omnipay\Agms\Message;
 use Mockery as mockery;
 use Omnipay\Tests\TestCase;
 
-class AuthorizeRequestTest extends TestCase
+class AbstractRequestTest extends TestCase
 {
     public function setUp()
     {

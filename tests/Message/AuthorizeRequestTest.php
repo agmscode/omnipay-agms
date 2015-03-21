@@ -19,23 +19,14 @@ class AuthorizeRequestTest extends TestCase
     {
         $this->assertSame('https://gateway.agms.com/roxapi/agms.asmx', $this->request->getEndpoint());
     }
-    
+
     public function testGetData()
     {
         $data = $this->request->getData();
         $this->assertSame('10.00', $data['Amount']);
     }
 
-    /**
-     * @expectedException \Omnipay\Common\Exception\InvalidRequestException
-     * @expectedExceptionMessage The card parameter is required
-     */
-    public function testCardRequired()
-    {
-        $this->request->setCard(null);
-        $this->request->getData();
-    }
-
+    
     public function testDataWithCard()
     {
         $card = $this->getValidCard();
@@ -66,5 +57,4 @@ class AuthorizeRequestTest extends TestCase
         $this->assertSame('549879', $response->getTransactionReference());
         $this->assertSame('Declined', $response->getMessage());
     }
-
 }
