@@ -1,7 +1,7 @@
 {
-    "name": "omnipay/agms",
+    "name": "agmscode/omnipay-agms",
     "type": "library",
-    "description": "Agms Gateway driver for the Omnipay payment processing library",
+    "description": "Agms driver for the Omnipay PHP payment processing library",
     "keywords": [
         "agms",
         "AGMS",
@@ -20,10 +20,6 @@
         {
             "name": "Maanas Royy",
             "email": "maanas@agms.com"
-        },
-        {
-            "name": "Michael Varian",
-            "email": "michael@agms.com"
         }
     ],
     "autoload": {
