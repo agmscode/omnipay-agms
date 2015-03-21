@@ -56,7 +56,4 @@ class CreateCardRequest extends AbstractRequest
         $httpResponse =  $this->httpClient->post($this->getEndpoint(), $headers, $xml)->send();
         return $this->response = new Response($this, $httpResponse->getBody(), 'AddToSAFE');
     }
-
-    
-    
 }

@@ -38,5 +38,4 @@ class AuthorizeRequest extends AbstractRequest
         
         return $data;
     }
-    
 }

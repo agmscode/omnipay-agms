@@ -7,7 +7,7 @@ namespace Omnipay\Agms\Message;
  */
 class VoidRequest extends AbstractRequest
 {
-	/**
+    /**
      * Transaction type
      *
      * @return string
@@ -29,5 +29,4 @@ class VoidRequest extends AbstractRequest
         
         return $data;
     }
-
 }

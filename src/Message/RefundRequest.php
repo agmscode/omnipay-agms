@@ -31,5 +31,4 @@ class RefundRequest extends AbstractRequest
         
         return $data;
     }
-
 }

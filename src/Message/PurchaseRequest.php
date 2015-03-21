@@ -38,5 +38,4 @@ class PurchaseRequest extends AbstractRequest
         
         return $data;
     }
-
 }

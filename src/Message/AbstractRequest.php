@@ -123,7 +123,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      */
     public function getDeveloperMode()
     {
-        return False;
+        return false;
     }
 
     /**
@@ -133,7 +133,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      */
     public function setDeveloperMode($value)
     {
-        return $this->setParameter('developerMode', False);
+        return $this->setParameter('developerMode', false);
     }
 
     /**
@@ -148,12 +148,10 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['GatewayPassword'] = $this->getPassword();
         $data['PaymentType'] = $this->paymentType;
 
-        if(isset($this->transactionType))
-        {
+        if(isset($this->transactionType)){
             $data['TransactionType'] = $this->transactionType;
         }
-        if(isset($this->safeAction))
-        {
+        if(isset($this->safeAction)){
             $data['SAFE_Action'] = $this->safeAction;
         }
         return $data;
@@ -173,8 +171,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $data['LastName'] = $card->getBillingLastName();
             $data['Company'] = $card->getBillingCompany();
             $data['Address1'] = $card->getBillingAddress1();
-            if ( $card->getBillingAddress2() )
+            if ($card->getBillingAddress2()){
                 $data['Address2'] = $card->getBillingAddress2();
+            }
             
             $data['City'] = $card->getBillingCity();
             $data['State'] = $card->getBillingState();
@@ -197,25 +196,33 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         // Customer shipping details
         if ($card = $this->getCard()) {
             // Customer shipping details
-            if ( $card->getShippingFirstName() )
+            if ($card->getShippingFirstName()){
                 $data['ShippingFirstName'] = $card->getShippingFirstName();
-            if ( $card->getShippingLastName() )  
+            }
+            if ($card->getShippingLastName()){  
                 $data['ShippingLastName'] = $card->getShippingLastName();
-            if ( $card->getShippingCompany() )  
+            }
+            if ($card->getShippingCompany()){  
                 $data['ShippingCompany'] = $card->getShippingCompany();
-            if ( $card->getShippingAddress1() )  
+            }
+            if ($card->getShippingAddress1()){  
                 $data['ShippingAddress1'] = $card->getShippingAddress1();
-            if ( $card->getShippingAddress2() )  
+            }
+            if ($card->getShippingAddress2()){  
                 $data['ShippingAddress2'] = $card->getShippingAddress2();
-            if ( $card->getShippingCity() )  
+            }
+            if ($card->getShippingCity()){  
                 $data['ShippingCity'] = $card->getShippingCity();
-            if ( $card->getShippingState() )  
+            }
+            if ($card->getShippingState()){  
                 $data['ShippingState'] = $card->getShippingState();
-            if ( $card->getShippingPostcode() )  
+            }
+            if ($card->getShippingPostcode()){  
                 $data['ShippingZip'] = $card->getShippingPostcode();
-            if ( $card->getShippingCountry() )  
+            }
+            if ($card->getShippingCountry()){  
                 $data['ShippingCountry'] = $card->getShippingCountry();
-             
+            } 
         }
         return $data;
     }
