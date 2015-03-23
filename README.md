@@ -1,12 +1,14 @@
-# Omnipay: Agms
+Omnipay: AGMS
 
-**Agms driver for the Omnipay PHP payment processing library**
+---
+
+**AGMS driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/agmscode/omnipay-agms.png?branch=master)](https://travis-ci.org/agmscode/omnipay-agms)
 [![Latest Stable Version](https://poser.pugx.org/agmscode/omnipay-agms/v/stable.svg)](https://packagist.org/packages/agmscode/omnipay-agms) [![Total Downloads](https://poser.pugx.org/agmscode/omnipay-agms/downloads.svg)](https://packagist.org/packages/agmscode/omnipay-agms) [![Latest Unstable Version](https://poser.pugx.org/agmscode/omnipay-agms/v/unstable.svg)](https://packagist.org/packages/agmscode/omnipay-agms) [![License](https://poser.pugx.org/agmscode/omnipay-agms/license.svg)](https://packagist.org/packages/agmscode/omnipay-agms)
 
 [Omnipay](https://github.com/agmscode/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements Agms support for Omnipay.
+processing library for PHP 5.3+. This package implements AGMS support for Omnipay.
 
 ## Installation
 
